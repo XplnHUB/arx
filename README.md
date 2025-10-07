@@ -2,7 +2,7 @@
 
 **arx** is a modern Node.js backend framework designed for developers who want to handle multiple data formats effortlessly. It combines the simplicity of Express-style routing with automatic parsing for JSON, CSV, XML, YAML, form-data, and binary data.
 
-Arx is ideal for building APIs, file processing services, IoT backends, and any server that needs to work with multiple data formats without extra boilerplate.
+arx is ideal for building APIs, file processing services, IoT backends, and any server that needs to work with multiple data formats without extra boilerplate.
 
 ---
 
@@ -10,7 +10,6 @@ Arx is ideal for building APIs, file processing services, IoT backends, and any 
 
 * Express-style API with `app.get()`, `app.post()`, `app.use()` syntax.
 * Automatic body parsing for multiple formats:
-
   * JSON (`application/json`)
   * CSV (`text/csv`)
   * XML (`application/xml`)
@@ -28,7 +27,7 @@ Arx is ideal for building APIs, file processing services, IoT backends, and any 
 
 ```bash
 npm install arx
-```
+````
 
 ---
 
@@ -66,7 +65,7 @@ app.post("/binary", (req, res) => {
 });
 
 // Start server
-app.listen(3000, () => console.log("Arx running on http://localhost:3000"));
+app.listen(3000, () => console.log("arx running on http://localhost:3000"));
 ```
 
 ---
@@ -86,7 +85,7 @@ curl -X POST http://localhost:3000/json \
 ```bash
 curl -X POST http://localhost:3000/csv \
 -H "Content-Type: text/csv" \
---data "name,age\nAlice,25\nBob,30"
+--data "name,age\narpit,20\nadarsh,19"
 ```
 
 **XML**
@@ -94,7 +93,7 @@ curl -X POST http://localhost:3000/csv \
 ```bash
 curl -X POST http://localhost:3000/xml \
 -H "Content-Type: application/xml" \
---data "<users><user><name>Alice</name><age>25</age></user></users>"
+--data "<users><user><name>arpit</name><age>20</age></user></users>"
 ```
 
 **Binary**
@@ -158,3 +157,4 @@ Contributions are welcome. Fork the repository, submit pull requests, or suggest
 ## License
 
 MIT License
+
