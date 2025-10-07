@@ -1,6 +1,6 @@
 # arx
 
-**Arx** is a modern Node.js backend framework designed for developers who want to handle multiple data formats effortlessly. It combines the simplicity of Express-style routing with automatic parsing for JSON, CSV, XML, YAML, form-data, and binary data.
+**arx** is a modern Node.js backend framework designed for developers who want to handle multiple data formats effortlessly. It combines the simplicity of Express-style routing with automatic parsing for JSON, CSV, XML, YAML, form-data, and binary data.
 
 Arx is ideal for building APIs, file processing services, IoT backends, and any server that needs to work with multiple data formats without extra boilerplate.
 
@@ -35,9 +35,9 @@ npm install arx
 ## Quick Start
 
 ```js
-import Arx from "arx";
+import arx from "arx";
 
-const app = Arx();
+const app = arx();
 
 // Middleware
 app.use((req, res, next) => {
@@ -78,7 +78,7 @@ app.listen(3000, () => console.log("Arx running on http://localhost:3000"));
 ```bash
 curl -X POST http://localhost:3000/json \
 -H "Content-Type: application/json" \
--d '{"name":"Alice","age":25}'
+-d '{"name":"arpit","age":20}'
 ```
 
 **CSV**
