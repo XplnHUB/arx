@@ -8,18 +8,33 @@ arx is ideal for building APIs, file processing services, IoT backends, and any 
 
 ## Features
 
-* Express-style API with `app.get()`, `app.post()`, `app.use()` syntax.
-* Automatic body parsing for multiple formats:
+* **Express-style API** with `app.get()`, `app.post()`, `app.use()` syntax.
+* **Automatic body parsing** for multiple formats:
   * JSON (`application/json`)
   * CSV (`text/csv`)
   * XML (`application/xml`)
   * YAML (`application/x-yaml`)
   * Form-data (`multipart/form-data`)
   * Binary (`application/octet-stream`)
-* Stream handling for large file uploads and streaming data.
-* Middleware system compatible with custom or third-party middleware.
-* Unified request object: `req.body` contains parsed data regardless of format.
-* Response helpers: `res.json()`, `res.csv()`, `res.xml()`, `res.yaml()`, `res.file()`.
+* **Stream handling** for large file uploads and streaming data.
+* **Middleware system** with global, path-specific, and route-level support.
+* **Async middleware** support with full promise-based execution.
+* **Error handling middleware** for centralized error management.
+* **Route parameters** and wildcard routes (`/users/:id`, `/files/*`).
+* **Query string parsing** with automatic parameter extraction.
+* **Enhanced response helpers**:
+  * `res.status(code)` - Set HTTP status code
+  * `res.set(header, value)` - Set response headers
+  * `res.json()`, `res.csv()`, `res.xml()`, `res.yaml()` - Format-specific responses
+  * `res.file()`, `res.download()` - File handling
+  * `res.error()` - Standardized error responses
+  * `res.stream()` - Stream piping
+* **Graceful shutdown** with cleanup hooks.
+* **CORS support** with configurable options.
+* **TypeScript definitions** for full type safety.
+* **Comprehensive error handling** with status codes and detailed messages.
+* **File upload limits** with configurable size and memory constraints.
+* **XXE protection** for XML parsing (enabled by default).
 
 ---
 
@@ -106,13 +121,22 @@ curl -X POST http://localhost:3000/binary \
 
 ---
 
+## Documentation
+
+* **[API Reference](./docs/api.md)** - Complete API documentation with examples
+* **[Architecture Overview](./docs/architecture.md)** - Internal design and patterns
+* **[Security Practices](./docs/security.md)** - Security guidelines and best practices
+* **[Troubleshooting Guide](./docs/troubleshooting.md)** - Common issues and solutions
+
+---
+
 ## How It Works
 
 1. The HTTP server receives the request.
 2. The auto-detect parser identifies the content type and parses the body into `req.body`.
-3. Middleware functions are executed.
-4. The appropriate route handler is called.
-5. Response helpers send data back to the client.
+3. Middleware functions are executed in order.
+4. The appropriate route handler is called with extracted parameters.
+5. Response helpers send data back to the client in the desired format.
 
 ---
 

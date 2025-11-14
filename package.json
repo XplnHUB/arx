@@ -4,10 +4,15 @@
   "description": "modern Node.js backend framework designed for developers who want to handle multiple data formats effortlessly. It combines the simplicity of Express-style routing with automatic parsing for JSON, CSV, XML, YAML, form-data, and binary data.",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "arx": "./bin/arx.js"
+  },
   "scripts": {
     "test": "vitest",
+    "test:benchmark": "vitest tests/benchmark.test.js",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -52,15 +57,21 @@
   "homepage": "https://github.com/XplnHUB/arx#readme",
   "dependencies": {
     "busboy": "^1.6.0",
-    "csv-parse": "^5.5.4",
+    "csv-parse": "^5.6.0",
     "xml2js": "^0.6.2",
-    "yaml": "^2.5.0"
+    "yaml": "^2.8.1"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
     "@types/busboy": "^1.5.4",
-    "eslint": "^9.0.0",
-    "prettier": "^3.2.0",
-    "vitest": "^1.5.0"
+    "@types/node": "^22.19.1",
+    "eslint": "^9.39.1",
+    "husky": "^8.0.3",
+    "prettier": "^3.6.2",
+    "vitest": "^1.6.1"
+  },
+  "optionalDependencies": {
+    "toml": "^3.0.0",
+    "protobufjs": "^7.2.5",
+    "msgpackr": "^1.10.1"
   }
 }
