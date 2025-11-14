@@ -249,7 +249,7 @@ jobs:
       # - name: Deploy to GitHub Pages
       #   uses: peaceiris/actions-gh-pages@v3
       #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     github_token: ${{ secrets.GH_TOKEN }}
       #     publish_dir: ./docs
 
       # Generic deployment notification
@@ -290,7 +290,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
 
       # Download coverage artifacts
       - name: Download coverage artifacts
