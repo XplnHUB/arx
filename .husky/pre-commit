@@ -1,0 +1,30 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running pre-commit checks..."
+
+# Run linter
+echo "Linting code..."
+npm run lint --silent
+if [ $? -ne 0 ]; then
+  echo "Linting failed. Please fix errors before committing."
+  exit 1
+fi
+
+# Run formatter check
+echo "Checking code format..."
+npm run format --silent
+if [ $? -ne 0 ]; then
+  echo "Code formatting failed. Please run 'npm run format' to fix."
+  exit 1
+fi
+
+# Run tests
+echo "Running tests..."
+npm test -- --run --silent
+if [ $? -ne 0 ]; then
+  echo "Tests failed. Please fix failing tests before committing."
+  exit 1
+fi
+
+echo "All pre-commit checks passed!"
