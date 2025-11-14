@@ -1,0 +1,66 @@
+{
+  "name": "arx",
+  "version": "1.0.0",
+  "description": "modern Node.js backend framework designed for developers who want to handle multiple data formats effortlessly. It combines the simplicity of Express-style routing with automatic parsing for JSON, CSV, XML, YAML, form-data, and binary data.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XplnHUB/arx.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "backend",
+    "framework",
+    "routing",
+    "express-style",
+    "middleware",
+    "http-server",
+    "parser",
+    "json",
+    "csv",
+    "yaml",
+    "xml",
+    "form-data",
+    "multipart",
+    "binary",
+    "body-parser",
+    "api",
+    "rest",
+    "server",
+    "streaming",
+    "file-upload",
+    "iot",
+    "edge",
+    "arx",
+    "webframework",
+    "lightweight",
+    "minimal",
+    "express-alternative"
+  ],
+  "author": "CodeMaverick-143 && XplnHUB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XplnHUB/arx/issues"
+  },
+  "homepage": "https://github.com/XplnHUB/arx#readme",
+  "dependencies": {
+    "busboy": "^1.6.0",
+    "csv-parse": "^5.5.4",
+    "xml2js": "^0.6.2",
+    "yaml": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/busboy": "^1.5.4",
+    "eslint": "^9.0.0",
+    "prettier": "^3.2.0",
+    "vitest": "^1.5.0"
+  }
+}
