@@ -171,7 +171,7 @@ For more information about ARX, visit: https://github.com/XplnHUB/arx
 
   fs.writeFileSync(path.join(projectPath, 'README.md'), readme);
 
-  console.log(`✅ Project "${projectName}" created successfully!`);
+  console.log(`Project "${projectName}" created successfully!`);
   console.log(`\nNext steps:`);
   console.log(`  cd ${projectName}`);
   console.log(`  npm install`);
